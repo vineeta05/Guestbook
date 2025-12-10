@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ghcr.io/vineeta05>/backend-service:latest
+          image: ghcr.io/vineeta05/backend-service:latest
           ports:
             - containerPort: 8080
       imagePullSecrets:
