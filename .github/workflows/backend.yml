@@ -29,8 +29,8 @@ jobs:
           docker build -t frontend:${{ github.sha }} .
           docker tag frontend:${{ github.sha }} ghcr.io/vineeta05/frontend-service:${{ github.sha }}
           docker tag frontend:${{ github.sha }} ghcr.io/vineeta05/frontend-service:latest
-          docker push ghcr.io/<username>/frontend-service:${{ github.sha }}
-          docker push ghcr.io/<username>/frontend-service:latest
+          docker push ghcr.io/vineeta05/frontend-service:${{ github.sha }}
+          docker push ghcr.io/vineeta05/frontend-service:latest
 
       # Build and push backend
       - name: Build Backend
@@ -39,8 +39,8 @@ jobs:
           docker build -t backend:${{ github.sha }} .
           docker tag backend:${{ github.sha }} ghcr.io/vineeta05/backend-service:${{ github.sha }}
           docker tag backend:${{ github.sha }} ghcr.io/vineeta05/backend-service:latest
-          docker push ghcr.io/<username>/backend-service:${{ github.sha }}
-          docker push ghcr.io/<username>/backend-service:latest
+          docker push ghcr.io/vineeta05/backend-service:${{ github.sha }}
+          docker push ghcr.io/vineeta05/backend-service:latest
 
   deploy:
     runs-on: ubuntu-latest
