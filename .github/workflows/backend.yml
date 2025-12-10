@@ -59,7 +59,9 @@ jobs:
           oc login --server=${{ secrets.OPENSHIFT_URL }} \
             --token=${{ secrets.OPENSHIFT_PASSWORD }} \
             --insecure-skip-tls-verify=true
+      - name: Set project
+        run: oc project vineeta-singh-dev
 
       - name: Apply OpenShift YAMLs
         run: |
-          oc apply -f openshift/
+          oc apply -f openshift/ --namespace=vineeta-singh-dev
