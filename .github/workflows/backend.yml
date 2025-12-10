@@ -56,9 +56,8 @@ jobs:
 
       - name: Login to OpenShift
         run: |
-          oc login ${{ secrets.OPENSHIFT_URL }} \
-            --username=${{ secrets.OPENSHIFT_USER }} \
-            --password=${{ secrets.OPENSHIFT_PASSWORD }} \
+          oc login --server=${{ secrets.OPENSHIFT_URL }} \
+            --token=${{ secrets.OPENSHIFT_PASSWORD }} \
             --insecure-skip-tls-verify=true
 
       - name: Apply OpenShift YAMLs
