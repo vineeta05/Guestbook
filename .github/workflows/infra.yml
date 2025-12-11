@@ -15,11 +15,10 @@ jobs:
           tar -xzf openshift-client-linux.tar.gz
           sudo mv oc kubectl /usr/local/bin/
           oc version --client
-
       - name: Login to OpenShift
         env:
           OPENSHIFT_URL: ${{ secrets.OPENSHIFT_URL }}
-          OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
+          OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_PASSWORD }}
         run: |
           oc login --server=${OPENSHIFT_URL} --token=${OPENSHIFT_TOKEN} --insecure-skip-tls-verify=true
 
