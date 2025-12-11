@@ -64,4 +64,4 @@ jobs:
 
       - name: Apply OpenShift YAMLs
         run: |
-          oc apply -f openshift/ --namespace=vineeta-singh-dev
+          oc apply -f openshift/apps --namespace=vineeta-singh-dev
