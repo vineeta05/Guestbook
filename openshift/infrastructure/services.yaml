@@ -1,0 +1,30 @@
+# Combined Services for backend + frontend
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  labels:
+    app: guestbook
+    tier: backend
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: backend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: frontend
